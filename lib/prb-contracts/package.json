@@ -1,0 +1,61 @@
+{
+  "name": "@prb/contracts",
+  "description": "Off-the-shelf Solidity smart contracts",
+  "version": "4.1.1",
+  "author": {
+    "name": "Paul Razvan Berg",
+    "url": "https://github.com/paulrberg"
+  },
+  "bugs": {
+    "url": "https://github.com/paulrberg/prb-contracts/issues"
+  },
+  "dependencies": {
+    "@prb/math": "^2.5.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.2",
+    "prettier-plugin-solidity": "^1.0.0-dev.21",
+    "solhint": "^3.3.7",
+    "solhint-plugin-prettier": "^0.0.5"
+  },
+  "files": [
+    "**/*.sol",
+    "CHANGELOG.md"
+  ],
+  "homepage": "https://github.com/paulrberg/prb-contracts#readme",
+  "keywords": [
+    "blockchain",
+    "erc20",
+    "ethereum",
+    "library",
+    "smart-contracts",
+    "solidity"
+  ],
+  "license": "Unlicense",
+  "packageManager": "yarn@3.2.0",
+  "peerDependencies": {
+    "@prb/math": "2.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulrberg/prb-contracts"
+  },
+  "scripts": {
+    "lint": "yarn solhint && yarn prettier:check",
+    "lint:check": "yarn prettier:check && yarn solhint:check",
+    "postinstall": "husky install",
+    "prettier": "prettier --config \"./.prettierrc.yml\" --write \"**/*.{json,md,sol,yml}\"",
+    "prettier:check": "prettier --config \"./.prettierrc.yml\" --check \"**/*.{json,md,sol,yml}\"",
+    "solhint": "solhint --config ./.solhint.json \"{src,test}/**/*.sol\""
+  }
+}
